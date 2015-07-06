@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Prototypal_Inheritance_notes</title>
+	</head>
+<body>
+
+<h1>Prototypal Inheritance in JS</h1>
+
+<p>Let’s see some examples of JS protoypal inheritance, or for better saying, <em>behavior delegation</em> or <em>OLOO</em> (Objects Linking to Others Objects), that work as a better/cleaner way than using “classes” and “constructors”.</p>
+
+<h2>Prototype Delegation</h2>
+
+<p>Delegate properties from a <strong>delegate prototype</strong> to a new or existing object. If you try to access the delegated properties on the new object, it will search through the prototype chain until find them.</p>
+
+<p>Example:</p>
+
+<pre><code>var myNewObj = Object.create(delegateProto);
+</code></pre>
+
+<h2>Concatenative Inheritance</h2>
+
+<p>Build an object <strong>adding</strong> or copying properties from one or multiple <strong>exemplar prototypes</strong>.</p>
+
+<p>Example:</p>
+
+<pre><code>var myNewObj = Object.assign({}, exemplarProto01, exemplarProto02);
+</code></pre>
+
+<p>Mixing up both previous aproaches:</p>
+
+<pre><code>var myNewObj = Object.assign(Object.create(delegateProto), exemplarProto01, exemplarProto02);
+</code></pre>
+
+<p>Notes: <code>Object.create</code> is part of the ES5 spec and is supported on modern browsers. <code>Object.assign</code> is part of the ES6 spec, so in order to use it you have to transpile the code or use a library with some similar utility or polyfill <sup><a id="ffn1" href="#fn1" class="footnote">1</a></sup>.</p>
+
+<p>So simple as that, and you’ve the foundations to start using prototypal inheritance in more complex patterns, without the need to mimic classical inheritance or classes.</p>
+
+<h2>Alternative methods</h2>
+
+<h3>Modules</h3>
+
+<p>Use the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">module pattern</a> to encapsulate and reuse code instead of delegate or copying behavior. This a valid approach and if you want to share or “inherit” behavior between modules you can mix this pattern with the previous methods, allowing to pick and choose which features you require.</p>
+
+<p>Examples:</p>
+
+<pre><code>var importedModule = require(&#39;importedModule&#39;);
+// Or with ES6 modules
+// import importedModule from &#39;./importedModule.js&#39;;
+
+var myNewObj = Object.assign({}, importedModule);
+</code></pre>
+
+<h3>Functional Mixins</h3>
+
+<p>In this case we’re going to favor <a href="https://en.wikipedia.org/wiki/Design_Patterns#Introduction.2C_Chapter_1">composition over inheritance</a> and using <a href="https://javascriptweblog.wordpress.com/2011/05/31/a-fresh-look-at-javascript-mixins/">functional mixins</a> to achieve it, in a similar way as <code>Object.assign</code> works (let’s say we going to share a interface, instead of a prototype or class).</p>
+
+<p>See a detailed exmaple in the following link:</p>
+
+<p><a href="https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins">https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins</a></p>
+
+<h2>Related sources:</h2>
+
+<ul>
+	<li><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3">The Two Pillars of Javascript: Prototypal Inheritance</a>.</li>
+	<li><a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a">Common Misconceptions About Inheritance in JavaScript</a>.</li>
+	<li><a href="http://raganwald.com/2015/05/11/javascript-classes.html">OOP, JavaScript, and so-called Classes</a>.</li>
+	<li><a href="http://davidwalsh.name/javascript-objects">Getify’s JS Objects serie</a>.</li>
+	<li><a href="">YDKJS: this and Object Prototypes</a>.</li>
+	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create()">MDN: Object.create</a>.</li>
+	<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign">MDN: Object.assign</a>.</li>
+</ul>
+
+<ol id="footnotes">
+	<li id="fn1">jQuery’s <code>$.extend()</code>, Underscore’s <code>_.extend()</code>, Lodash’ <code>assign()</code>. Or a <a href="https://github.com/sindresorhus/object-assign">generic polyfill</a>. <a href="#ffn1">&#8617;</a></li>
+</ol></body>
+</html>
