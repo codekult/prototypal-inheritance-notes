@@ -1,6 +1,6 @@
 # Prototypal Inheritance in JS
 
-Notes on Prototypal Inheritance on JavaScript:
+Notes on Prototypal Inheritance in JavaScript:
 
 https://codekult.github.io/prototypal-inheritance-notes/
 
