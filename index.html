@@ -36,7 +36,7 @@
 
 <p>Notes: <code>Object.create</code> is part of the ES5 spec and is supported on modern browsers. <code>Object.assign</code> is part of the ES6 spec, so in order to use it you have to transpile the code or use a library with some similar utility or polyfill <sup><a id="ffn1" href="#fn1" class="footnote">1</a></sup>.</p>
 
-<p>So simple as that, and you’ve the foundations to start using prototypal inheritance in more complex patterns, without the need to mimic classical inheritance or classes.</p>
+<p>So simple as that, and you’ve the foundations to start using prototypal inheritance in more complex patterns, without the need to mimic classical inheritance or using constructors.</p>
 
 <h2>Alternative methods</h2>
 
@@ -57,7 +57,7 @@ var myNewObj = Object.assign({}, importedModule);
 
 <p>In this case we’re going to favor <a href="https://en.wikipedia.org/wiki/Design_Patterns#Introduction.2C_Chapter_1">composition over inheritance</a> and using <a href="https://javascriptweblog.wordpress.com/2011/05/31/a-fresh-look-at-javascript-mixins/">functional mixins</a> to achieve it, in a similar way as <code>Object.assign</code> works (let’s say we going to share a interface, instead of a prototype or class).</p>
 
-<p>See a detailed exmaple in the following link:</p>
+<p>See a detailed example in the following link:</p>
 
 <p><a href="https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins">https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins</a></p>
 
