@@ -12,7 +12,7 @@
 
 <h1>Prototypal Inheritance in JS</h1>
 
-<p>Let’s see some examples of JS protoypal inheritance, or for better saying, <em>behavior delegation</em> or <em>OLOO</em> (Objects Linking to Others Objects), that work as a better/cleaner way than using “classes” and “constructors”.</p>
+<p>Let’s see some examples of JS protoypal inheritance, <em>behavior delegation</em> or <em>OLOO</em> (Objects Linking to Others Objects) that work as a better/cleaner way than using “classes” and “constructors”.</p>
 
 <h2>Prototype Delegation</h2>
 
@@ -45,7 +45,7 @@
 
 <h3>Modules</h3>
 
-<p>Use the <a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">module pattern</a> to encapsulate and reuse code instead of delegate or copying behavior. This a valid approach and if you want to share or “inherit” behavior between modules you can mix this pattern with the previous methods, allowing to pick and choose which features you require.</p>
+<p>Use the <a target="_blank" href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript">module pattern</a> to encapsulate and reuse code instead of delegate or copying behavior. This a valid approach and if you want to share or “inherit” behavior between modules you can mix this pattern with the previous methods, allowing to pick and choose which features you require.</p>
 
 <p>Examples:</p>
 
@@ -58,26 +58,29 @@ var myNewObj = Object.assign({}, importedModule);
 
 <h3>Functional Mixins</h3>
 
-<p>In this case we’re going to favor <a href="https://en.wikipedia.org/wiki/Design_Patterns#Introduction.2C_Chapter_1">composition over inheritance</a> and using <a href="https://javascriptweblog.wordpress.com/2011/05/31/a-fresh-look-at-javascript-mixins/">functional mixins</a> to achieve it, in a similar way as <code>Object.assign</code> works (let’s say we going to share a interface, instead of a prototype or class).</p>
+<p>In this case we’re going to favor <a target="_blank" href="https://en.wikipedia.org/wiki/Design_Patterns#Introduction.2C_Chapter_1">composition over inheritance</a> and using <a target="_blank" href="https://javascriptweblog.wordpress.com/2011/05/31/a-fresh-look-at-javascript-mixins/">functional mixins</a> to achieve it, in a similar way as <code>Object.assign</code> works (let’s say we going to share a interface, instead of a prototype or class).</p>
 
 <p>See a detailed example in the following link:</p>
 
-<p><a href="https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins">https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins</a></p>
+<p><a target="_blank" href="https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins">https://github.com/raganwald/javascript-allonge/blob/master/manuscript/markdown/Ideas/functional-mixins.md#functional-mixins</a></p>
+
+Also, <a target="_blank" href="https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841">decorators</a> are coming with ES2016, and able us to <a target="_blank" href="http://raganwald.com/2015/06/26/decorators-in-es7.html">apply the later</a> in a different way.
+
 
 <h2>Related sources:</h2>
 
 <ul>
-	<li><a href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3">The Two Pillars of Javascript: Prototypal Inheritance</a>.</li>
-	<li><a href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a">Common Misconceptions About Inheritance in JavaScript</a>.</li>
-	<li><a href="http://raganwald.com/2015/05/11/javascript-classes.html">OOP, JavaScript, and so-called Classes</a>.</li>
-	<li><a href="http://davidwalsh.name/javascript-objects">Getify’s JS Objects serie</a>.</li>
-	<li><a href="">YDKJS: this and Object Prototypes</a>.</li>
-	<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create()">MDN: Object.create</a>.</li>
-	<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign">MDN: Object.assign</a>.</li>
+	<li><a target="_blank" href="https://medium.com/javascript-scene/the-two-pillars-of-javascript-ee6f3281e7f3">The Two Pillars of Javascript: Prototypal Inheritance</a>.</li>
+	<li><a target="_blank" href="https://medium.com/javascript-scene/common-misconceptions-about-inheritance-in-javascript-d5d9bab29b0a">Common Misconceptions About Inheritance in JavaScript</a>.</li>
+	<li><a target="_blank" href="http://raganwald.com/2015/05/11/javascript-classes.html">OOP, JavaScript, and so-called Classes</a>.</li>
+	<li><a target="_blank" href="http://davidwalsh.name/javascript-objects">Getify’s JS Objects serie</a>.</li>
+	<li><a target="_blank" href="">YDKJS: this and Object Prototypes</a>.</li>
+	<li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create#Classical_inheritance_with_Object.create()">MDN: Object.create</a>.</li>
+	<li><a target="_blank" href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Object/assign">MDN: Object.assign</a>.</li>
 </ul>
 
 <ol id="footnotes">
-	<li id="fn1">jQuery’s <code>$.extend()</code>, Underscore’s <code>_.extend()</code>, Lodash’ <code>assign()</code>. Or a <a href="https://github.com/sindresorhus/object-assign">generic polyfill</a>. <a href="#ffn1">&#8617;</a></li>
+	<li id="fn1">jQuery’s <code>$.extend()</code>, Underscore’s <code>_.extend()</code>, Lodash’ <code>assign()</code>. Or a <a target="_blank" href="https://github.com/sindresorhus/object-assign">generic polyfill</a>. <a target="_blank" href="#ffn1">&#8617;</a></li>
 </ol>
 <script src="js/highlight.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
